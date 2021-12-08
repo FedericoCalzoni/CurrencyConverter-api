@@ -153,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             tList.setVisibility(View.VISIBLE);
             conversionRateFor.setVisibility(View.VISIBLE);
             c.setVisibility(View.GONE);
+            vs3 = s3.getSelectedItem().toString();
             counter = 1;
 
         } else {
@@ -167,6 +168,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @SuppressLint("DefaultLocale")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if(counter==1){
+            vs3 = s3.getSelectedItem().toString();
+            getListRate();
+        }
         if (eInput.getText().length() < 1) {
             tOutput.setText("");
             return;
